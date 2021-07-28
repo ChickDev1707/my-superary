@@ -30,4 +30,4 @@ const db = mongoose.connection
 db.on('error', error=> console.error(error))
 db.once('open', ()=> console.log('connected to mongoose'))
 
-app.listen(port)
+app.listen(process.env.PORT || port)
