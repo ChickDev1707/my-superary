@@ -11,6 +11,7 @@ const app = express()
 // includes routes
 const indexRoute = require('./routes/index.js')
 const authorRoute = require('./routes/author.js')
+const bookRoute = require('./routes/book.js')
 
 const port = 3000
 
@@ -27,6 +28,7 @@ app.use(express.static('public'))
 // routes
 app.use('/', indexRoute)
 app.use('/authors', authorRoute)
+app.use('/books', bookRoute)
 
 // database
 mongoose.connect(process.env.DATABASE_URL, {

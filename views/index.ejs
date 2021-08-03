@@ -1,1 +1,6 @@
-middle
+<h1>Recently added books</h1>
+<% books.forEach((book)=>{ %>
+    <img src="<%= book.coverImgPath %>" alt="cover" height="150" width= "100">
+    <p><%= book.title %> </p>  
+    <p><%= book.publishDate.toISOString().split('T')[0] %> </p>
+<% }) %> 

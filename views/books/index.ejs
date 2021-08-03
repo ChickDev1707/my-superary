@@ -1,0 +1,24 @@
+
+
+<h2>Search books</h2>
+<form action="/books" method="GET">
+    <div>
+        <label for="">title</label><br>
+        <input name="title" type="text">
+    </div>
+    <div>
+        <label for="">publish date after</label><br>
+        <input name="after" type="date">
+    </div>
+    <div>
+        <label for="">publish date before</label><br>
+        <input name="before" type="date">
+    </div>
+    <button type="submit">search</button>
+</form>
+
+<% books.forEach((book)=>{ %>
+    <img src="<%= book.coverImgPath %>" alt="cover" height="150" width= "100">
+    <p><%= book.title %> </p>  
+    <p><%= book.publishDate.toISOString().split('T')[0] %> </p>
+<% }) %> 
