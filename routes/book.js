@@ -1,21 +1,11 @@
 const express = require('express')
 const Author = require('../models/author.js')
 const Book = require('../models/book.js')
-const multer = require('multer')
-const path = require('path')
-const fs = require('fs')
 
 const router = express.Router()
 
 const imageMimeTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif']
-const uploadPath = path.join('public', Book.coverImageBasePath)
-const upload = multer({
-    dest: uploadPath,
-    fileFilter: (req, file, callback)=>{
-        callback(null, imageMimeTypes.includes(file.mimetype))
-    }
-})
-// index
+
 router.get('/', async (req, res)=>{
     try{
         var query = Book.find()
@@ -41,31 +31,25 @@ router.get('/new', async (req, res)=>{
 })
 
 // create new book
-router.post('/', upload.single('cover'), async (req, res)=>{
-    const fileName = req.file!= null? req.file.filename: null
+router.post('/', async (req, res)=>{
     const book = new Book({
         title: req.body.title,
         author: req.body.author,
         publishDate: req.body.publishDate,
         pageCount: req.body.pageCount,
-        coverImg: fileName,
         description: req.body.description
     })
+    saveCover(book, req.body.cover)
+    console.log(req.body.cover)
+
     try{
         const newBook = await book.save()
         res.redirect('/books')
     }catch{
         renderNewPage(res, book, true)
-        if(book.coverImg != null) removeBookCover(book.coverImg)
     }
 })
-
-function removeBookCover(fileName){
-    fs.unlink(path.join(uploadPath, fileName), (err)=>{
-        if(err) console.log(err)
-    })
-}
-
+ 
 async function renderNewPage(res, book, hasError = false){
     try{
         const book = new Book()
@@ -78,6 +62,14 @@ async function renderNewPage(res, book, hasError = false){
         res.render('books/new.ejs', params)
     }catch{
         res.redirect('/books')
+    }
+}
+function saveCover(book, coverEncoded){
+    if(coverEncoded == null) return
+    const cover = JSON.parse(coverEncoded)
+    if(cover!= null && imageMimeTypes.includes(cover.type)){
+        book.coverImage = new Buffer.from(cover.data, 'base64')
+        book.coverImageType = cover.type
     }
 }
 module.exports = router
