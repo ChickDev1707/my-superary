@@ -8,4 +8,7 @@
 
 <% authors.forEach((author)=>{ %>
     <p><%= author.name %> </p>  
+    <a href="/authors/<%= author.id %>">view</a>
+    <a href="/authors/<%= author.id %>/edit">edit</a>
+    <%- include('../partials/_delete-form-field.ejs', {url: `/authors/${author.id}`}) %> 
 <% }) %> 
