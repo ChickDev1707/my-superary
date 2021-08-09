@@ -1,0 +1,25 @@
+
+$table-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+$row-border: #cccccc;
+
+.table{
+  width: 100%;
+  padding: 2rem;
+  border-radius: .2rem;
+  border-collapse: collapse;
+  box-shadow: $table-box-shadow;
+  tr{
+    border-bottom: 1.5px solid $row-border;
+    th, td{
+      padding: .8rem 0;
+      text-align: center;
+    }
+    th{
+      padding: 1rem 0;
+      font-size: 1rem;
+    }
+    &:last-child{
+      border-bottom: transparent;
+    }
+  }
+}

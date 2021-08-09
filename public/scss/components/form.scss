@@ -1,0 +1,67 @@
+
+$form-box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+$form-label-font-size: 0.9rem;
+$form-label-color: #7f8c8d;
+$form-input-background-color: #e7e7e7;
+
+.form{
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: $form-box-shadow;
+  margin-bottom: 3rem;
+  >p{
+    margin-bottom: 2rem;
+  }
+}
+
+.form-row{
+  display: flex;
+  margin-bottom: 1rem;
+  >*{
+      margin-left: 2rem;
+  }
+  .form-item{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-basis: 0;
+    label{
+      font-size: $form-label-font-size;
+      color: $form-label-color;
+      text-transform: capitalize;
+      font-weight: bold;
+      margin-bottom: .25rem;
+      font-family: 'roboto';
+    }
+
+    input, select, textarea{
+      height: 2.5rem;
+      padding: .5rem 1rem;
+      font-size: 1rem;
+      border-radius: .25rem;
+      border: 2px solid $form-input-background-color;
+      outline: none;
+      background-color: $form-input-background-color;
+      &:focus{
+        border: 2px solid $main-blue;
+      }
+    }
+    textarea{
+      height: 100%;
+      resize: none;
+    }
+    .filepond--root{
+      width: 10rem;
+      font-family: 'roboto';
+      margin-bottom: 0;
+    }
+  }
+  :first-child{
+    margin-left: 0;
+  }
+  .form-item-no-grow{
+    flex-grow: 0;
+  }
+}
+
+

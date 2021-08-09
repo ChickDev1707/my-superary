@@ -1,0 +1,37 @@
+
+@import './shared/variables.scss';
+@import './shared/fonts.scss';
+@import './components/header.scss';
+@import './components/button.scss';
+@import './components/form.scss';
+@import './components/table.scss';
+@import './components/book.scss';
+@import './components/author.scss';
+
+*, *::after, *::before{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'roboto';
+  color: $text-color-primary;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.app-container{
+  position: absolute;
+  max-height: 1200px;
+  width: 100%;
+  padding: 0;
+}
+
+.inner-container{
+  margin: 0 15rem;
+  margin-bottom: 3rem;
+}
+.page-title{
+  text-transform: capitalize;
+  color: $text-color-primary;
+}
