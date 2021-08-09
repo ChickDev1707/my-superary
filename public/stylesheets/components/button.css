@@ -1,0 +1,76 @@
+.btn {
+  border: none;
+  cursor: pointer;
+  padding: 0.6rem 1.8rem;
+  font-family: "roboto";
+  border-radius: 5px;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+.un-link {
+  text-decoration: none;
+}
+
+.btn-container-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-container-row > * {
+  margin-left: 1rem;
+}
+
+.btn-container-row > *:first-child {
+  margin-left: 0;
+}
+
+.btn-primary {
+  color: white;
+  background-color: #2980b9;
+}
+.btn-primary:hover {
+  background-color: #3498db;
+}
+
+.btn-border-primary {
+  color: #2980b9;
+  border: 2px solid #2980b9;
+  font-weight: bold;
+}
+.btn-border-primary:hover {
+  color: white;
+  background-color: #2980b9;
+}
+
+.btn-delete {
+  color: white;
+  background-color: #d63031;
+}
+.btn-delete:hover {
+  background-color: #e44242;
+}
+
+.btn-border-delete {
+  color: #d63031;
+  font-weight: bold;
+  border: 2px solid #d63031;
+  background-color: white;
+}
+.btn-border-delete:hover {
+  background-color: #d63031;
+  color: white;
+}
+
+.btn-cancel {
+  color: white;
+  background-color: #f0932b;
+}
+.btn-cancel:hover {
+  background-color: #ff9f43;
+}
+
+/*# sourceMappingURL=button.css.map */

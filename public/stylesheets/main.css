@@ -1,0 +1,329 @@
+@font-face {
+  font-family: "roboto";
+  src: url("../fonts/roboto/Roboto-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "roboto";
+  src: url("../fonts/roboto/Roboto-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "roboto";
+  src: url("../fonts/roboto/Roboto-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+header {
+  background: linear-gradient(to right, #222f3e, #34495e);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5rem;
+}
+header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+header ul li {
+  position: relative;
+  display: inline-block;
+  padding: 0 1rem;
+  text-transform: capitalize;
+}
+header ul li a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #b2bec3;
+}
+header ul li a:hover {
+  color: white;
+}
+header > a > img {
+  height: 35px;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  padding: 0.6rem 1.8rem;
+  font-family: "roboto";
+  border-radius: 5px;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+.un-link {
+  text-decoration: none;
+}
+
+.btn-container-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn-container-row > * {
+  margin-left: 1rem;
+}
+
+.btn-container-row > *:first-child {
+  margin-left: 0;
+}
+
+.btn-primary {
+  color: white;
+  background-color: #2980b9;
+}
+.btn-primary:hover {
+  background-color: #3498db;
+}
+
+.btn-border-primary {
+  color: #2980b9;
+  border: 2px solid #2980b9;
+  font-weight: bold;
+}
+.btn-border-primary:hover {
+  color: white;
+  background-color: #2980b9;
+}
+
+.btn-delete {
+  color: white;
+  background-color: #d63031;
+}
+.btn-delete:hover {
+  background-color: #e44242;
+}
+
+.btn-border-delete {
+  color: #d63031;
+  font-weight: bold;
+  border: 2px solid #d63031;
+  background-color: white;
+}
+.btn-border-delete:hover {
+  background-color: #d63031;
+  color: white;
+}
+
+.btn-cancel {
+  color: white;
+  background-color: #f0932b;
+}
+.btn-cancel:hover {
+  background-color: #ff9f43;
+}
+
+.form {
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+  margin-bottom: 3rem;
+}
+.form > p {
+  margin-bottom: 2rem;
+}
+
+.form-row {
+  display: flex;
+  margin-bottom: 1rem;
+}
+.form-row > * {
+  margin-left: 2rem;
+}
+.form-row .form-item {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+.form-row .form-item label {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  font-family: "roboto";
+}
+.form-row .form-item input, .form-row .form-item select, .form-row .form-item textarea {
+  height: 2.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  border: 2px solid #e7e7e7;
+  outline: none;
+  background-color: #e7e7e7;
+}
+.form-row .form-item input:focus, .form-row .form-item select:focus, .form-row .form-item textarea:focus {
+  border: 2px solid #3498db;
+}
+.form-row .form-item textarea {
+  height: 100%;
+  resize: none;
+}
+.form-row .form-item .filepond--root {
+  width: 10rem;
+  font-family: "roboto";
+  margin-bottom: 0;
+}
+.form-row :first-child {
+  margin-left: 0;
+}
+.form-row .form-item-no-grow {
+  flex-grow: 0;
+}
+
+.table {
+  width: 100%;
+  padding: 2rem;
+  border-radius: 0.2rem;
+  border-collapse: collapse;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.table tr {
+  border-bottom: 1.5px solid #cccccc;
+}
+.table tr th, .table tr td {
+  padding: 0.8rem 0;
+  text-align: center;
+}
+.table tr th {
+  padding: 1rem 0;
+  font-size: 1rem;
+}
+.table tr:last-child {
+  border-bottom: transparent;
+}
+
+.books-display-area {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, auto);
+  gap: 1rem;
+  max-height: 1200px;
+}
+.books-display-area .book-container {
+  position: relative;
+  padding: 0.5rem;
+  border-radius: 5px;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+.books-display-area .book-container .img-container {
+  position: relative;
+  width: 90%;
+  height: 75%;
+  margin: 0 auto;
+}
+.books-display-area .book-container .img-container img {
+  height: 100%;
+  width: 100%;
+}
+.books-display-area .book-container p {
+  margin: 0;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+.books-display-area .book-container p:first-of-type {
+  margin-bottom: 0;
+  margin-top: 1rem;
+}
+.books-display-area .book-container:hover {
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+
+.book-detail-container {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+.book-detail-container .cover-and-btn .img-container {
+  width: 80%;
+  height: 25rem;
+  margin: 0 auto 1rem;
+}
+.book-detail-container .cover-and-btn .img-container img {
+  width: 100%;
+  height: 100%;
+}
+.book-detail-container .info-panel {
+  margin-left: 3rem;
+}
+.book-detail-container .info-panel p {
+  font-size: 1.2rem;
+}
+
+.author-book-display-area {
+  display: grid;
+  flex-direction: row;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 18rem);
+  gap: 1rem;
+}
+.author-book-display-area .author-book-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.author-book-display-area .author-book-container img {
+  width: 100%;
+  height: 100%;
+}
+.author-book-display-area .author-book-container .author-book-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2.5rem;
+  text-align: center;
+  padding-top: 0.5rem;
+  background-color: rgba(51, 51, 51, 0.8);
+  color: white;
+  transform: translateY(100%);
+  transition: 0.3s;
+}
+.author-book-display-area .author-book-container:hover .author-book-title {
+  transform: translateY(0);
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "roboto";
+  color: #333;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.app-container {
+  position: absolute;
+  max-height: 1200px;
+  width: 100%;
+  padding: 0;
+}
+
+.inner-container {
+  margin: 0 15rem;
+  margin-bottom: 3rem;
+}
+
+.page-title {
+  text-transform: capitalize;
+  color: #333;
+}
+
+/*# sourceMappingURL=main.css.map */

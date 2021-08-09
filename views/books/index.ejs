@@ -1,24 +1,37 @@
 
-
-<h2>Search books</h2>
-<form action="/books" method="GET">
-    <div>
-        <label for="">title</label><br>
-        <input name="title" type="text">
+<h1 class="page-title">Search books</h1>
+<form class="form" action="/books" method="GET">
+  <h2>Book searching form</h2>
+  <p class="form-des">Enter book info to the appropriate input to search book info<br>
+  <div class="form-row">
+    <div class="form-item">
+      <label for="">title</label>
+      <input name="title" type="text">
     </div>
-    <div>
-        <label for="">publish date after</label><br>
-        <input name="after" type="date">
+    <div class="form-item">
+      <label for="">publish date after</label>
+      <input name="after" type="date">
     </div>
-    <div>
-        <label for="">publish date before</label><br>
-        <input name="before" type="date">
+    <div class="form-item">
+      <label for="">publish date before</label>
+      <input name="before" type="date">
     </div>
-    <button type="submit">search</button>
+  </div>
+  <button class="btn btn-primary" type="submit">search</button>
 </form>
 
-<% books.forEach((book)=>{ %>
-    <img src="<%= book.coverImgPath %>" alt="cover" height="150" width= "100">
-    <p><%= book.title %> </p>  
-    <p><%= book.publishDate.toISOString().split('T')[0] %> </p>
-<% }) %> 
+<div>
+  <h1 class="page-title">Library books</h1>
+  <div class="books-display-area">
+    <% books.forEach((book)=>{ %>
+      <div class="book-container">
+        <div class="img-container">
+          <img src="<%= book.coverImgPath %>" alt="cover">
+        </div>
+        <p>Title: <%= book.title %></p>
+        <p>Date: <%= book.publishDate.toDateString() %></p>
+        <a class="btn btn-primary un-link" href="/books/<%= book.id %>">Detail</a>
+      </div>
+    <% }) %> 
+  </div>
+</div>

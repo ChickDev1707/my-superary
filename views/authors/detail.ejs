@@ -1,11 +1,18 @@
 
-<h2>author info</h2>
+<h1 class="page-title">author info</h1>
 <div>
     <h3><%= author.name %></h3>
-    <a href="/authors/<%= author.id %>/edit">Edit</a>
-    <%- include('../partials/_delete-form-field', {url: `/authors/${author.id}`}) %> 
+    <div class="btn-container-row">
+        <a class="btn btn-primary un-link" href="/authors/<%= author.id %>/edit">Edit</a>
+        <%- include('../partials/_delete-form-field', {url: `/authors/${author.id}`}) %> 
+    </div>
 </div>
-<h2>Books by author</h2>
-<% books.forEach((book)=>{ %>
-    <img src="<%= book.coverImgPath %>" alt="cover" height="150" width= "100">
-<% }) %> 
+<h1 class="page-title">Books by author</h1>
+<div class="author-book-display-area">
+  <% books.forEach((book)=>{ %>
+    <div class="author-book-container">
+      <img src="<%= book.coverImgPath %>" alt="cover">
+      <div class="author-book-title"><%= book.title %> </div>
+    </div>
+  <% }) %> 
+</div>

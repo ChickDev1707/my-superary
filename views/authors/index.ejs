@@ -1,14 +1,34 @@
 
-<h2>Search author</h2>
-<form action="/authors" method="GET">
-    <label for="">name</label><br>
-    <input name="name" type="text" value="<%= searchValue %>"><br>
-    <button type="submit">search</button>
+<h1>Search author</h1>
+<form class="form" action="/authors" method="GET">
+    <h2>Author searching form</h2>
+    <p class="form-des">What author do you want to search? Enter his or her information here<br>
+    
+    <div class="form-row">
+        <div class="form-item">
+            <label for="">name</label>
+            <input name="name" type="text" value="<%= searchValue %>">
+        </div>
+        <div class="form-item"></div>
+    </div>
+    <button class="btn btn-primary" type="submit">search</button>
 </form>
-
-<% authors.forEach((author)=>{ %>
-    <p><%= author.name %> </p>  
-    <a href="/authors/<%= author.id %>">view</a>
-    <a href="/authors/<%= author.id %>/edit">edit</a>
-    <%- include('../partials/_delete-form-field.ejs', {url: `/authors/${author.id}`}) %> 
-<% }) %> 
+  
+<table class="table">
+    <tr>
+        <th>Index</th>
+        <th>Name</th>
+        <th>View</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <% authors.forEach((author, index)=>{ %>
+        <tr>
+            <td><%= index+1 %></td>
+            <td><%= author.name%></td>
+            <td><a class="btn btn-border-primary un-link" href="/authors/<%= author.id %>">view</a></td>
+            <td><a class="btn btn-border-primary un-link" href="/authors/<%= author.id %>/edit">edit</a></td>
+            <td><%- include('../partials/_delete-form-field.ejs', {url: `/authors/${author.id}`}) %></td>
+        </tr>
+    <%}) %> 
+</table>

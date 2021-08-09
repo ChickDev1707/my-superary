@@ -1,0 +1,35 @@
+.author-book-display-area {
+  display: grid;
+  flex-direction: row;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 18rem);
+  gap: 1rem;
+}
+.author-book-display-area .author-book-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.author-book-display-area .author-book-container img {
+  width: 100%;
+  height: 100%;
+}
+.author-book-display-area .author-book-container .author-book-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2.5rem;
+  text-align: center;
+  padding-top: 0.5rem;
+  background-color: rgba(51, 51, 51, 0.8);
+  color: white;
+  transform: translateY(100%);
+  transition: 0.3s;
+}
+.author-book-display-area .author-book-container:hover .author-book-title {
+  transform: translateY(0);
+}
+
+/*# sourceMappingURL=author.css.map */

@@ -1,7 +1,12 @@
 
-<h2>new book</h2>
-<form action="/books" method= "POST">
+<h1 class="page-title">new book</h1>
+<form class="form" action="/books" method= "POST">
+    <h2>Create new book form</h2>
+    <p class="form-des">Enter book info to the appropriate input to create new book<br>
+    <b>Note:</b> book cover can only by image file</p>
     <%- include('_form-field.ejs') %> 
-    <a href="/books">cancel</a>
-    <button type="submit">create</button>
+    <div class="btn-container-row">
+        <a class="btn btn-cancel un-link" href="/books">cancel</a>
+        <button class="btn btn-primary" type="submit">create</button>
+    </div>
 </form>

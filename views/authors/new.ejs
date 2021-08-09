@@ -1,8 +1,13 @@
 
-<h2>Add new Author</h2>
+<h1>Add new Author</h1>
 
-<form action="/authors" method="POST">
+<form class="form" action="/authors" method="POST">
+    <h2>Create new author form</h2>
+    <p class="form-des">Want to create an author? Enter his or her name here to add new author to the system<br>
+    
     <%- include('_form-field') %> 
-    <a href="/authors">cancel</a>
-    <button type="submit">create</button>
+    <div class="btn-container-row">
+        <a class="btn btn-cancel un-link" href="/authors">cancel</a>
+        <button class="btn btn-primary" type="submit">create</button>
+    </div>
 </form>

@@ -25,6 +25,7 @@ app.set('layout', 'layouts/layout')
 app.use(expressLayout)
 app.use(express.urlencoded({extended: false}))
 app.use(express.static('public'))
+app.use('/public', express.static(__dirname+ '/public'))
 app.use(methodOverride('_method'))
 
 // routes
