@@ -1,4 +1,10 @@
 {
+  "name": "superary",
+  "description": "a library but super",
+  "version": "1.0.0",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "start": "node server.js",
     "devStart": "nodemon server.js",
@@ -17,5 +23,6 @@
   },
   "devDependencies": {
     "dotenv": "^10.0.0"
-  }
+  },
+  
 }
