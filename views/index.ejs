@@ -1,6 +1,14 @@
-<h1>Recently added books</h1>
-<% books.forEach((book)=>{ %>
-    <img src="<%= book.coverImgPath %>" alt="cover" height="150" width= "100">
-    <p><%= book.title %> </p>  
-    <p><%= book.publishDate.toISOString().split('T')[0] %> </p>
-<% }) %> 
+<h1 class="page-title">Recently added books</h1>
+
+<div class="books-display-area">
+  <% books.forEach((book)=>{ %>
+    <div class="book-container">
+    <div class="img-container">
+        <img src="<%= book.coverImgPath %>" alt="cover">
+    </div>
+    <p>Title: <%= book.title %></p>
+    <p>Date: <%= book.publishDate.toDateString() %></p>
+    <a class="btn btn-primary un-link" href="/books/<%= book.id %>">Detail</a>
+    </div>
+  <% }) %> 
+</div>

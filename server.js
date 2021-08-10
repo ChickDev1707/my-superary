@@ -6,6 +6,7 @@ const express = require('express')
 const expressLayout = require('express-ejs-layouts')
 const mongoose = require('mongoose')
 const methodOverride = require('method-override')
+const bodyParser= require('body-parser')
 
 const app = express()
 
@@ -23,7 +24,7 @@ app.set('layout', 'layouts/layout')
 
 // utilities
 app.use(expressLayout)
-app.use(express.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }))
 app.use(express.static('public'))
 app.use('/public', express.static(__dirname+ '/public'))
 app.use(methodOverride('_method'))
