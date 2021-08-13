@@ -4,7 +4,11 @@
   <% books.forEach((book)=>{ %>
     <div class="book-container">
     <div class="img-container">
-        <img src="<%= book.coverImgPath %>" alt="cover">
+      <% if(book.coverImgPath != null){ %>
+        <img src="<%= book.coverImgPath %> " alt="cover">
+      <% }else{ %> 
+        <img src="/public/images/default-book-cover.png" alt="">
+      <% } %> 
     </div>
     <p>Title: <%= book.title %></p>
     <p>Date: <%= book.publishDate.toDateString() %></p>

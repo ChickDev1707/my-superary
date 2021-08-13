@@ -18,11 +18,12 @@ router.get('/', async (req, res)=>{
         if(req.query.before!= '' && req.query.before!= null){
             query.lte('publishDate', req.query.before)
         }
-        const books = await query.exec()
+        const books = await query.limit(4).exec()
         res.render('books/index.ejs', {books})
     }catch{
         res.redirect('/')
     }
+    
 })
 
 // new book page
@@ -106,6 +107,23 @@ router.delete('/:id', async (req, res)=>{
         }else res.redirect('/')
     }
 }) 
+
+router.get('/page/:id', async (req, res)=>{
+    try{
+        if(req.params.id != null && req.params.id != ''){
+            let pageIndex = Number(req.params.id)
+            let start = (pageIndex-1)*4
+            const books = await Book.find()
+            const result = books.slice(start, start+ 4)
+            res.render('books/index.ejs', {
+                books: result,
+                pageIndex
+            })
+        }
+    }catch(err){
+        console.log(err)
+    }
+})
 
 async function renderFormPage(res, book, form, hasError = false){
     try{
